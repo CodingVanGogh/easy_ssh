@@ -8,4 +8,7 @@ setup(name='easy_ssh',
       license = "MIT",
       keywords = "SSH made easy easy-ssh paramiko",
       url = "https://github.com/brlohith/easy_ssh",
+      install_requires=[
+          'paramiko',
+      ]
      )
