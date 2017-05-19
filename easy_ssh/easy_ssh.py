@@ -18,7 +18,8 @@ class EasySSH():
         """ Execute the <command> via the SSHClient and return ( exit_code, outputOfTheCommand ) """
         stdin, stdout, stderr = self.SSHClient.exec_command(command)
         output = "".join(stdout.readlines())
-        return (stdout.channel.recv_exit_status(), output)
+        error_output = "".join(stderr.readlines())
+        return (stdout.channel.recv_exit_status(), output, error_output)
 
 
     def execute_as_root(self, command, password):
@@ -27,7 +28,7 @@ class EasySSH():
         if not stdout.channel.closed:
             stdin.write('%s\n' %(password))
             stdin.flush()
-        return (stdout.channel.recv_exit_status(), "".join(stdout.readlines()))
+        return (stdout.channel.recv_exit_status(), "".join(stdout.readlines()), "".join(stderr.readlines())
 
 
 
