@@ -28,7 +28,7 @@ class EasySSH():
         if not stdout.channel.closed:
             stdin.write('%s\n' %(password))
             stdin.flush()
-        return (stdout.channel.recv_exit_status(), "".join(stdout.readlines()), "".join(stderr.readlines())
+        return (stdout.channel.recv_exit_status(), "".join(stdout.readlines()), "".join(stderr.readlines()))
 
 
 
