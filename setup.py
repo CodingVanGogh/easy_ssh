@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='easy_ssh',
-      version='1.0.0',
+      version='1.1.0',
       description='SSH made easy using Paramiko. Execute commands on remote hosts as a root user as well.',
       author='Lohith B R',
       packages=['easy_ssh'],
